@@ -2,279 +2,748 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <title>Health Care</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>HealNet - Your Digital Health Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <style>
+        .service-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+        .stat-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        .doctor-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .doctor-card:hover {
+            transform: translateX(10px);
+        }
+    </style> -->
 </head>
 
-<body>
+<body class="bg-white">
 
-  <nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-default">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 29.2174C0 26.8879 0.459162 24.5811 1.35133 22.429C2.2435 20.2767 3.55112 18.3212 5.19962 16.6739C6.84811 15.0267 8.80508 13.72 10.9589 12.8285C13.1128 11.9372 15.4213 11.4783 17.7526 11.4783V29.2174H0Z"
-            fill="#00A4F4" />
-          <path
-            d="M0 29.2174C0 31.684 0.459162 34.1264 1.35133 36.4053C2.2435 38.6841 3.55112 40.7546 5.19962 42.4987C6.84811 44.2428 8.80508 45.6264 10.9589 46.5703C13.1128 47.5142 15.4213 48 17.7526 48V29.2174H0Z"
-            fill="#2CBEFF" />
-          <path
-            d="M35.5052 29.2174C35.5052 31.684 35.0464 34.1264 34.1543 36.4053C33.2621 38.6841 31.9546 40.7546 30.3057 42.4987C28.6572 44.2428 26.7002 45.6264 24.5462 46.5703C22.3925 47.5142 20.0839 48 17.7526 48V29.2174H35.5052Z"
-            fill="#75D4FF" />
-          <path
-            d="M46.9922 13.5652C46.9922 21.0571 40.914 27.1304 33.4166 27.1304H19.8412V13.5652C19.8412 6.07338 25.9192 0 33.4166 0C40.914 0 46.9922 6.07338 46.9922 13.5652Z"
-            fill="#0084D4" />
-        </svg>
-        <svg width="107" height="20" viewBox="0 0 107 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M4.2 18.76H1.14739e-06V1.66893e-06H4.2V7.448H14V1.66893e-06H18.2V18.76H14V11.228H4.2V18.76ZM27.9011 19.04C23.2251 19.04 20.0331 16.744 20.0331 11.76C20.0331 7.28 23.1971 4.452 27.8171 4.452C32.4091 4.452 35.4611 6.86 35.4611 11.256C35.4611 11.76 35.4051 12.124 35.3491 12.6H23.9251C24.0371 14.756 25.0451 15.68 27.7611 15.68C30.2531 15.68 31.1211 15.036 31.1211 13.832V13.552H35.3211V13.86C35.3211 16.912 32.3531 19.04 27.9011 19.04ZM27.7331 7.728C25.2411 7.728 24.1771 8.568 23.9811 10.388H31.4291C31.3171 8.54 30.1971 7.728 27.7331 7.728ZM41.5542 19.04C38.5302 19.04 36.7102 17.64 36.7102 15.288C36.7102 13.216 38.2502 11.928 41.2462 11.62L47.2662 11.004V10.472C47.2662 8.652 46.4542 8.148 44.2142 8.148C42.0862 8.148 41.2182 8.708 41.2182 10.304V10.416H36.9902V10.332C36.9902 6.86 39.9022 4.452 44.5222 4.452C49.1982 4.452 51.4102 6.86 51.4102 10.528V18.76H47.4902V15.54H47.2662C46.6222 17.724 44.6622 19.04 41.5542 19.04ZM40.9382 15.008C40.9382 15.764 41.5262 16.072 42.7582 16.072C45.6142 16.072 47.1542 15.4 47.2662 13.412L42.3942 13.972C41.3862 14.056 40.9382 14.336 40.9382 15.008ZM57.7391 18.76H53.5391V1.66893e-06H57.7391V18.76ZM64.1375 18.76H59.9375V1.66893e-06H64.4175L71.1375 8.876L73.7135 12.824H74.0215L73.8255 9.044V1.66893e-06H78.0255V18.76H73.5455L66.6295 9.8L64.2495 6.272H63.9695L64.1375 9.716V18.76ZM87.7019 19.04C83.0259 19.04 79.8339 16.744 79.8339 11.76C79.8339 7.28 82.9979 4.452 87.6179 4.452C92.2099 4.452 95.2619 6.86 95.2619 11.256C95.2619 11.76 95.2059 12.124 95.1499 12.6H83.7259C83.8379 14.756 84.8459 15.68 87.5619 15.68C90.0539 15.68 90.9219 15.036 90.9219 13.832V13.552H95.1219V13.86C95.1219 16.912 92.1539 19.04 87.7019 19.04ZM87.5339 7.728C85.0419 7.728 83.9779 8.568 83.7819 10.388H91.2299C91.1179 8.54 89.9979 7.728 87.5339 7.728ZM106.927 18.76H103.455C100.179 18.76 98.191 17.22 98.191 13.692V8.204H95.979V4.732H98.191V2.016H102.391V4.732H106.927V8.204H102.391V13.216C102.391 14.616 102.923 14.98 104.407 14.98H106.927V18.76Z"
-            fill="#0069AB" />
-        </svg>
-      </a>
+    <nav class="bg-blue-50 fixed w-full z-20 top-0 start-0 border-b border-blue-100 transition-all duration-300">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse transition-transform duration-300 hover:scale-105">
+                <!--logo SVGs -->
+                <svg width="32" height="32" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 29.2174C0 26.8879 0.459162 24.5811 1.35133 22.429C2.2435 20.2767 3.55112 18.3212 5.19962 16.6739C6.84811 15.0267 8.80508 13.72 10.9589 12.8285C13.1128 11.9372 15.4213 11.4783 17.7526 11.4783V29.2174H0Z"
+                        fill="#00A4F4" />
+                    <path
+                        d="M0 29.2174C0 31.684 0.459162 34.1264 1.35133 36.4053C2.2435 38.6841 3.55112 40.7546 5.19962 42.4987C6.84811 44.2428 8.80508 45.6264 10.9589 46.5703C13.1128 47.5142 15.4213 48 17.7526 48V29.2174H0Z"
+                        fill="#2CBEFF" />
+                    <path
+                        d="M35.5052 29.2174C35.5052 31.684 35.0464 34.1264 34.1543 36.4053C33.2621 38.6841 31.9546 40.7546 30.3057 42.4987C28.6572 44.2428 26.7002 45.6264 24.5462 46.5703C22.3925 47.5142 20.0839 48 17.7526 48V29.2174H35.5052Z"
+                        fill="#75D4FF" />
+                    <path
+                        d="M46.9922 13.5652C46.9922 21.0571 40.914 27.1304 33.4166 27.1304H19.8412V13.5652C19.8412 6.07338 25.9192 0 33.4166 0C40.914 0 46.9922 6.07338 46.9922 13.5652Z"
+                        fill="#0084D4" />
+                </svg>
+                <svg width="90" height="18" viewBox="0 0 107 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.2 18.76H1.14739e-06V1.66893e-06H4.2V7.448H14V1.66893e-06H18.2V18.76H14V11.228H4.2V18.76ZM27.9011 19.04C23.2251 19.04 20.0331 16.744 20.0331 11.76C20.0331 7.28 23.1971 4.452 27.8171 4.452C32.4091 4.452 35.4611 6.86 35.4611 11.256C35.4611 11.76 35.4051 12.124 35.3491 12.6H23.9251C24.0371 14.756 25.0451 15.68 27.7611 15.68C30.2531 15.68 31.1211 15.036 31.1211 13.832V13.552H35.3211V13.86C35.3211 16.912 32.3531 19.04 27.9011 19.04ZM27.7331 7.728C25.2411 7.728 24.1771 8.568 23.9811 10.388H31.4291C31.3171 8.54 30.1971 7.728 27.7331 7.728ZM41.5542 19.04C38.5302 19.04 36.7102 17.64 36.7102 15.288C36.7102 13.216 38.2502 11.928 41.2462 11.62L47.2662 11.004V10.472C47.2662 8.652 46.4542 8.148 44.2142 8.148C42.0862 8.148 41.2182 8.708 41.2182 10.304V10.416H36.9902V10.332C36.9902 6.86 39.9022 4.452 44.5222 4.452C49.1982 4.452 51.4102 6.86 51.4102 10.528V18.76H47.4902V15.54H47.2662C46.6222 17.724 44.6622 19.04 41.5542 19.04ZM40.9382 15.008C40.9382 15.764 41.5262 16.072 42.7582 16.072C45.6142 16.072 47.1542 15.4 47.2662 13.412L42.3942 13.972C41.3862 14.056 40.9382 14.336 40.9382 15.008ZM57.7391 18.76H53.5391V1.66893e-06H57.7391V18.76ZM64.1375 18.76H59.9375V1.66893e-06H64.4175L71.1375 8.876L73.7135 12.824H74.0215L73.8255 9.044V1.66893e-06H78.0255V18.76H73.5455L66.6295 9.8L64.2495 6.272H63.9695L64.1375 9.716V18.76ZM87.7019 19.04C83.0259 19.04 79.8339 16.744 79.8339 11.76C79.8339 7.28 82.9979 4.452 87.6179 4.452C92.2099 4.452 95.2619 6.86 95.2619 11.256C95.2619 11.76 95.2059 12.124 95.1499 12.6H83.7259C83.8379 14.756 84.8459 15.68 87.5619 15.68C90.0539 15.68 90.9219 15.036 90.9219 13.832V13.552H95.1219V13.86C95.1219 16.912 92.1539 19.04 87.7019 19.04ZM87.5339 7.728C85.0419 7.728 83.9779 8.568 83.7819 10.388H91.2299C91.1179 8.54 89.9979 7.728 87.5339 7.728ZM106.927 18.76H103.455C100.179 18.76 98.191 17.22 98.191 13.692V8.204H95.979V4.732H98.191V2.016H102.391V4.732H106.927V8.204H102.391V13.216C102.391 14.616 102.923 14.98 104.407 14.98H106.927V18.76Z"
+                        fill="#0069AB" />
+                </svg>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="text-white bg-gradient-to-l from-sky-500 to-sky-300 hover:from-sky-600 hover:to-sky-400 cursor-pointer rounded-lg focus:ring-4 focus:ring-blue-300 shadow-sm font-medium text-sm px-5 py-2.5 transition-all duration-300 transform hover:scale-105 active:scale-95">
+                    Join us
+                </button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg md:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6 transition-transform duration-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Navigation -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition-all duration-300" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-sky-700 rounded md:bg-transparent md:text-sky-700 md:p-0 transition-all duration-300 hover:text-blue-800 hover:scale-105"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#services"
+                            class="block py-2 px-3 text-gray-700 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 transition-all duration-300 hover:scale-105">Services</a>
+                    </li>
+                    <li>
+                        <a href="#doctor"
+                            class="block py-2 px-3 text-gray-700 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 transition-all duration-300 hover:scale-105">Find
+                            Doctor</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="block py-2 px-3 text-gray-700 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 transition-all duration-300 hover:scale-105">About</a>
+                    </li>
+                    <li>
+                        <a href="#blog"
+                            class="block py-2 px-3 text-gray-700 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 transition-all duration-300 hover:scale-105">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="block py-2 px-3 text-gray-700 rounded hover:bg-blue-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 transition-all duration-300 hover:scale-105">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button type="button"
-          class="text-white bg-gradient-to-l from-sky-500 to-sky-300 hover:cursor-pointer rounded-lg focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-5 py-2 focus:outline-none">Join
-          us
-        </button>
-        <button data-collapse-toggle="navbar-sticky" type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
-          aria-controls="navbar-sticky" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-            viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-          </svg>
-        </button>
-      </div>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-        <ul
-          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-sky-700 bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0"
-              aria-current="page">Home</a>
-
-          </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">About</a>
-          </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Services</a>
-          </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Pages</a>
-          </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Blog</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- hero -->
-  <section class="text-gray-600 body-font">
-    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-      <div
-        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Your trusted partner <br> in digital
-          healthcare</h1>
-        <p class="mb-8 leading-relaxed">Empowering Your Health at Every Step. Experience personalized medical care from
-          the comfort of your home. Connect with certified doctors, or manage prescriptions, and schedule appointments
-          with ease. Ready to take control of your health? Get Started or Book an Appointment today.</p>
-        <div class="flex w-full md:justify-start justify-center items-end">
-          <button
-            class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Book an appointment</button>
-        </div>
-        <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Neutra shabby chic ramps, viral fixie.</p>
-        <div class="flex lg:flex-row md:flex-col">
-          <button
-            class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
-              <path
-                d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z">
-              </path>
-            </svg>
-            <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
-              <span class="title-font font-medium">Google Play</span>
-            </span>
-          </button>
-          <button
-            class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
-              <path
-                d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z">
-              </path>
-              <path
-                d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z">
-              </path>
-            </svg>
-            <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Download on the</span>
-              <span class="title-font font-medium">App Store</span>
-            </span>
-          </button>
-        </div>
-      </div>
-      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-        <img class="object-cover object-center rounded" alt="hero" src="./images/Group 1.png">
-      </div>
-    </div>
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col text-center w-full mb-20">
-          <h2 class="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
-          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1>
-        </div>
-        <div class="flex flex-wrap -m-4">
-          <div class="p-4 md:w-1/3">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg>
+    <!-- Hero Section -->
+    <section class="bg-blue-50 pt-20 pb-16 md:pt-32 md:pb-24 transition-all duration-500 bg-opacity-50" style="background: url(./images/Vector\ 1.png) center/cover;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center min-h-[70vh] md:min-h-[80vh]">
+                <div class="md:w-1/2 mb-10 md:mb-0 flex flex-col justify-center transform transition-all duration-700 delay-150">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mb-6 transition-all duration-500">
+                        Your <span
+                            class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">trusted
+                            partner</span>
+                        in digital healthcare.
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg transition-all duration-500 delay-300">
+                        <strong>Empowering Your Health at Every Step.</strong> Experience personalized medical care from
+                        the comfort
+                        of your home. Connect with <strong>certified doctors</strong>, manage prescriptions, and
+                        schedule
+                        appointments with ease. Ready to take control of your health? Get Started or Book an Appointment
+                        today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 transition-all duration-500 delay-500">
+                        <button
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md transform hover:scale-105 active:scale-95">
+                            Book an Appointment
+                        </button>
+                        <button
+                            class="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 active:scale-95">
+                            Learn More
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 transition-all duration-500 delay-700">Trusted by millions across the globe!</p>
+                    <div class="mt-2 transition-all duration-500 delay-800">
+                        <img src="./images/Group 10.png" alt="Trust indicators" class="h-8 transition-all duration-300 hover:scale-110">
+                    </div>
                 </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">Shooting Stars</h2>
-              </div>
-              <div class="flex-grow">
-                <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/3">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
+                <div class="md:w-1/2 flex items-center justify-center transform transition-all duration-700 delay-300">
+                    <div class="relative w-full max-w-lg transition-all duration-500 hover:scale-105">
+                        <img class="object-contain object-center rounded w-full h-auto max-h-[500px] transition-all duration-500" alt="hero"
+                            src="./images/Group 1.png">
+                        <div class="absolute -bottom-6 -left-6 bg-blue-500 text-white rounded-xl p-4 shadow-lg transition-all duration-300 transform hover:scale-110">
+                            <div class="text-center">
+                                <p class="text-2xl font-bold transition-all duration-300">10k+</p>
+                                <p class="text-sm transition-all duration-300">Patients Served</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">The Catalyzer</h2>
-              </div>
-              <div class="flex-grow">
-                <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
             </div>
-          </div>
-          <div class="p-4 md:w-1/3">
-            <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div class="flex items-center mb-3">
-                <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                  </svg>
-                </div>
-                <h2 class="text-gray-900 text-lg title-font font-medium">Neptune</h2>
-              </div>
-              <div class="flex-grow">
-                <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-  </section>
-  <!-- top services -->
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-col text-center w-full mb-20">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
-      </div>
-      <div class="flex flex-wrap -m-4">
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x360">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/601x361">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/603x363">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/602x362">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Neptune</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/605x365">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Holden Caulfield</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/3 sm:w-1/2 p-4">
-          <div class="flex relative">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/606x366">
-            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alper Kamu</h1>
-              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
-  <script type="module" src="./app.js"></script>
+    <!-- Easy Appointment Booking Section -->
+    <section class="text-gray-600 body-font transition-all duration-500">
+        <div class="container px-5 py-10 mx-auto border-2 border-gray-300 rounded-xl max-w-4xl transition-all duration-500 hover:shadow-xl">
+            <div class="flex flex-col text-center w-full mb-12 transition-all duration-500">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-blue-900 transition-all duration-500">Easily book an appointment in
+                    3 simple steps.</h1>
+            </div>
+            <div
+                class="flex w-full sm:flex-row flex-col mx-auto sm:space-x-4 sm:space-y-0 space-y-4 items-end justify-center transition-all duration-500">
+                <div class="relative flex-grow w-full max-w-xs transition-all duration-300 transform hover:scale-105">
+                    <label for="email" class="leading-7 text-sm text-gray-500 font-semibold transition-all duration-300">Email Address</label>
+                    <div class="relative transition-all duration-300">
+                        <input type="email" placeholder="Enter Your Email Address"
+                            class="w-full px-4 py-3 pl-11 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white transform hover:scale-105">
+                        <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative flex-grow w-full max-w-xs transition-all duration-300 transform hover:scale-105">
+                    <label for="Number" class="leading-7 text-sm  text-gray-500 font-semibold transition-all duration-300">Contact Us</label>
+                    <div class="relative transition-all duration-300">
+                        <input type="tel" placeholder="Enter Your Contact Number"
+                            class="w-full px-4 py-3 pl-11 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white transform hover:scale-105">
+                        <i class="fas fa-phone absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative flex-grow w-full max-w-xs transition-all duration-300 transform hover:scale-105">
+                    <label for="date" class="leading-7 text-sm text-gray-500 font-semibold transition-all duration-300">Date Of Appointment</label>
+                    <div class="relative transition-all duration-300">
+                        <input type="date"
+                            class="w-full px-4 py-3 pl-11 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white transform hover:scale-105">
+                        <i class="fas fa-calendar absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 transition-all duration-300"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Book Now Button - Centered -->
+            <div class="flex justify-center pt-8 transition-all duration-500">
+                <button
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 shadow-md text-lg flex items-center gap-2 transform hover:scale-110 active:scale-95">
+                    <span>Book Now</span>
+                    <i class="fas fa-arrow-right transition-all duration-300 transform group-hover:translate-x-1"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Services Section -->
+    <section id="services" class="py-16 bg-white transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 transition-all duration-500">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-4 transition-all duration-500">Top <span
+                        class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">services</span>
+                    we offer</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto transition-all duration-500">In today's fast-paced world, your health deserves the utmost
+                    attention and convenience. That's why we offer a suite of integrated services designed to cater to
+                    your
+                    healthcare needs digitally:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-500">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 service-card border border-gray-100 md:col-span-2 transition-all duration-300">
+                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 transform hover:scale-110">
+                        <img src="./images/Frame1.png" alt="" class="transition-all duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 transition-all duration-300">Online Consultations</h3>
+                    <p class="text-gray-600 transition-all duration-300">Connect with certified doctors through secure video calls for comprehensive
+                        medical consultations from the comfort of your home. Lorem ipsum dolor sit, amet consectetur
+                        adipisicing elit. Nesciunt, aliquid deleniti. Nulla, quae porro cumque quia maxime ex impedit
+                        nam ullam natus, tempore quos delectus quidem asperiores nostrum sed qui.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-blue-500 font-medium mt-4 transition-all duration-300 hover:text-blue-700 transform hover:translate-x-2">
+                        Learn more <i class="fas fa-arrow-right ml-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 service-card border border-gray-100 transition-all duration-300">
+                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 transform hover:scale-110">
+                        <img src="./images/Frame2.png" alt="" class="transition-all duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 transition-all duration-300">Booking Appointment </h3>
+                    <p class="text-gray-600 transition-all duration-300">Connect with certified doctors through secure video calls for comprehensive
+                        medical
+                        consultations from the comfort of your home.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-blue-500 font-medium mt-4 transition-all duration-300 hover:text-blue-700 transform hover:translate-x-2">
+                        Learn more <i class="fas fa-arrow-right ml-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 service-card border border-gray-100 transition-all duration-300">
+                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 transform hover:scale-110">
+                        <img src="./images/Frame3.png" alt="" class="transition-all duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 transition-all duration-300">Medical Notes</h3>
+                    <p class="text-gray-600 transition-all duration-300">Obtain necessary medical notes with authority to free clinical variables
+                        for your
+                        records and requirements.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-blue-500 font-medium mt-4 transition-all duration-300 hover:text-blue-700 transform hover:translate-x-2">
+                        Learn more <i class="fas fa-arrow-right ml-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-md p-6 service-card border border-gray-100 transition-all duration-300">
+                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 transform hover:scale-110">
+                        <img src="./images/Frame4.png" alt="" class="transition-all duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 transition-all duration-300">Prescription Management</h3>
+                    <p class="text-gray-600 transition-all duration-300">Get digital prescriptions and manage your medications with automatic refill
+                        reminders
+                        and delivery options.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-blue-500 font-medium mt-4 transition-all duration-300 hover:text-blue-700 transform hover:translate-x-2">
+                        Learn more <i class="fas fa-arrow-right ml-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+                <!-- Service 5  -->
+                <div class="bg-white rounded-xl shadow-md p-6 service-card border border-gray-100 transition-all duration-300">
+                    <div class="h-16 w-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 transform hover:scale-110">
+                        <img src="./images/Frame5.png" alt="" class="transition-all duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 transition-all duration-300">Medicine Refills</h3>
+                    <p class="text-gray-600 transition-all duration-300">Get digital prescriptions and manage your medications with automatic refill
+                        reminders
+                        and delivery options.</p>
+                    <a href="#"
+                        class="inline-flex items-center text-blue-500 font-medium mt-4 transition-all duration-300 hover:text-blue-700 transform hover:translate-x-2">
+                        Learn more <i class="fas fa-arrow-right ml-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- know about us -->
+    <section id="blog" class="py-16 bg-gray-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col items-center bg-white p-6 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-6xl mx-auto transition-all duration-500 hover:shadow-xl">
+                <img class="object-cover w-full rounded-lg h-64 md:h-auto md:w-96 mb-4 md:mb-0 md:mr-6 transition-all duration-500 transform hover:scale-105"
+                    src="./images/Rectangle 7.png" alt="Healthet Story">
+                <div class="flex flex-col justify-between md:p-4 leading-normal transition-all duration-500">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 transition-all duration-300">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-300">
+                            Healthet's Story: </span> Get to know us
+                    </h5>
+                    <p class="mb-6 text-gray-700 transition-all duration-300">
+                        Healthet is more than just an online medical service. It's a movement towards accessible,
+                        efficient, and compassionate healthcare for all. Founded by a team of visionary doctors,
+                        healthcare professionals, and technology experts, we are driven by the mission to deliver
+                        exceptional medical care directly to you, no matter where you are. Our platform is built on the
+                        principles of trust, innovation, and patient-centricity, ensuring that every consultation is
+                        personalized and every treatment plan is tailored to your unique needs. With a network of
+                        licensed practitioners from diverse medical fields, we guarantee comprehensive care that is just
+                        a click away.
+                    </p>
+                    <div>
+                        <button type="button"
+                            class="inline-flex items-center w-auto text-white bg-blue-500 border border-blue-600 hover:bg-blue-600 hover:text-white focus:ring-4 focus:ring-blue-200 shadow-sm font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none transition-all duration-300 transform hover:scale-105 active:scale-95">
+                            Learn more about us
+                            <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5 transition-all duration-300 transform group-hover:translate-x-1" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Our Platform Works Section -->
+    <section id="about" class="text-gray-600 body-font py-16 bg-blue-50 transition-all duration-500">
+        <div class="container px-5 mx-auto">
+            <!-- Section Heading -->
+            <div class="text-center mb-16 max-w-3xl mx-auto transition-all duration-500">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 transition-all duration-500">How <span
+                        class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">our
+                        platform</span>
+                    works</h2>
+                <p class="text-lg text-gray-600 leading-relaxed transition-all duration-500">
+                    Navigating your healthcare journey which has led us to wellness. Just follow these steps mentioned
+                    before to
+                    proceed with your selected services. You can also see our video section for more guidance.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap w-full transition-all duration-500">
+                <!-- Steps Column -->
+                <div class="lg:w-3/4 md:w-1/2 md:pr-10 md:py-6 transition-all duration-500">
+                    <!-- Step 1 -->
+                    <div class="flex relative pb-12 transition-all duration-300 hover:translate-x-2">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center transition-all duration-300">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none transition-all duration-300"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10 transition-all duration-300 transform hover:scale-110">
+                            <i class="fas fa-user-plus text-sm transition-all duration-300"></i>
+                        </div>
+                        <div class="flex-grow pl-4 transition-all duration-300">
+                            <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider transition-all duration-300">Create Your
+                                Profile</h2>
+                            <p class="leading-relaxed text-gray-600 transition-all duration-300">Sign up and fill your medical history, reading your
+                                story-to-date
+                                with your medical records.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex relative pb-12 transition-all duration-300 hover:translate-x-2">
+                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center transition-all duration-300">
+                            <div class="h-full w-1 bg-gray-200 pointer-events-none transition-all duration-300"></div>
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10 transition-all duration-300 transform hover:scale-110">
+                            <i class="fas fa-stethoscope text-sm transition-all duration-300"></i>
+                        </div>
+                        <div class="flex-grow pl-4 transition-all duration-300">
+                            <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider transition-all duration-300">Choose Your
+                                Service</h2>
+                            <p class="leading-relaxed text-gray-600 transition-all duration-300">Read a chat or consult with one of our certified
+                                specialists, or
+                                go for a physical visit to the doctor in person.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex relative transition-all duration-300 hover:translate-x-2">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10 transition-all duration-300 transform hover:scale-110">
+                            <i class="fas fa-heartbeat text-sm transition-all duration-300"></i>
+                        </div>
+                        <div class="flex-grow pl-4 transition-all duration-300">
+                            <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider transition-all duration-300">Meet Your
+                                Doctor</h2>
+                            <p class="leading-relaxed text-gray-600 transition-all duration-300">Get personalized treatment plans, prescriptions,
+                                and follow-up
+                                care tailored to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="lg:w-1/4 md:w-1/2 w-full flex justify-end items-start mt-8 lg:mt-0 transition-all duration-500">
+                    <div class="relative w-full max-w-xs transition-all duration-500 transform hover:scale-105">
+                        <img class="w-full h-auto shadow-lg rounded-lg transition-all duration-500" src="./images/Doctor-PNG-Images1.png"
+                            alt="Doctor with patient">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials Section -->
+    <section class="text-gray-600 body-font py-16 bg-white transition-all duration-500">
+        <div class="w-full text-center p-10 transition-all duration-500">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2 transition-all duration-500">
+                <span class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">Patient
+                    Testimonials:</span>
+            </h2>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-3 transition-all duration-500">
+                Hear from Those We've Cared For
+            </h3>
+            <p class="text-gray-500 max-w-2xl mx-auto transition-all duration-500">Discover the difference we make through the voices of those we've
+                served:</p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="container px-5 py-10 mx-auto flex flex-wrap transition-all duration-500">
+            <div class="flex flex-wrap -m-4 transition-all duration-500">
+                <div class="p-4 lg:w-1/2 md:w-full transition-all duration-300 transform hover:scale-105">
+                    <div
+                        class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col h-full transition-all duration-300 hover:shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 flex-shrink-0 transition-all duration-300 transform hover:scale-110">
+                            <img src="./images/Rectangle 8.png" alt="Patient"
+                                class="w-full h-full rounded-full object-cover transition-all duration-300">
+                        </div>
+                        <div class="flex-grow transition-all duration-300">
+                            <p class="leading-relaxed text-base transition-all duration-300">"The online consultation was so convenient! I could
+                                talk to a specialist without leaving my home, and the prescription was delivered the
+                                same day."</p>
+                            <a class="mt-3 text-blue-500 inline-flex items-center font-bold transition-all duration-300 hover:text-blue-700">
+                                - Linda A.
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2 transition-all duration-300" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 lg:w-1/2 md:w-full transition-all duration-300 transform hover:scale-105">
+                    <div
+                        class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col h-full transition-all duration-300 hover:shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 flex-shrink-0 transition-all duration-300 transform hover:scale-110">
+                            <img src="./images/Rectangle 8 (3).png" alt="Patient"
+                                class="w-full h-full rounded-full object-cover transition-all duration-300">
+                        </div>
+                        <div class="flex-grow transition-all duration-300">
+                            <p class="leading-relaxed text-base transition-all duration-300">"After my knee surgery, the convenience of online
+                                consultations made my recovery smoother than I could have imagined."</p>
+                            <a class="mt-3 text-blue-500 inline-flex items-center font-bold transition-all duration-300 hover:text-blue-700">
+                                - Henry B.
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2 transition-all duration-300" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Statistics Cards -->
+                <div class="w-full py-8 transition-all duration-500">
+                    <dl class="grid max-w-screen-xl grid-cols-2 md:grid-cols-4 gap-8 p-4 mx-auto text-gray-900 sm:p-8 transition-all duration-500">
+                        <div class="flex flex-col items-center justify-center text-center stat-card transition-all duration-300 transform hover:scale-110">
+                            <dt class="mb-2 text-3xl font-bold text-blue-500 transition-all duration-300">10,000+</dt>
+                            <dd class="text-gray-600 transition-all duration-300">Happy Patients</dd>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center stat-card transition-all duration-300 transform hover:scale-110">
+                            <dt class="mb-2 text-3xl font-bold text-blue-500 transition-all duration-300">2,500+</dt>
+                            <dd class="text-gray-600 transition-all duration-300">Expert Doctors</dd>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center stat-card transition-all duration-300 transform hover:scale-110">
+                            <dt class="mb-2 text-3xl font-bold text-blue-500 transition-all duration-300">98%</dt>
+                            <dd class="text-gray-600 transition-all duration-300">Satisfaction Rate</dd>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center stat-card transition-all duration-300 transform hover:scale-110">
+                            <dt class="mb-2 text-3xl font-bold text-blue-500 transition-all duration-300">200+</dt>
+                            <dd class="text-gray-600 transition-all duration-300">Clinics</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="p-4 lg:w-1/2 md:w-full transition-all duration-300 transform hover:scale-105">
+                    <div
+                        class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col h-full transition-all duration-300 hover:shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 flex-shrink-0 transition-all duration-300 transform hover:scale-110">
+                            <img src="./images/Rectangle 8 (1).png" alt="Patient"
+                                class="w-full h-full rounded-full object-cover transition-all duration-300">
+                        </div>
+                        <div class="flex-grow transition-all duration-300">
+                            <p class="leading-relaxed text-base transition-all duration-300">"The medical notes service saved me so much time. I got
+                                all the documentation I needed for my insurance without any hassle."</p>
+                            <a class="mt-3 text-blue-500 inline-flex items-center font-bold transition-all duration-300 hover:text-blue-700">
+                                - Sarah M.
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2 transition-all duration-300" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 lg:w-1/2 md:w-full transition-all duration-300 transform hover:scale-105">
+                    <div
+                        class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col h-full transition-all duration-300 hover:shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 flex-shrink-0 transition-all duration-300 transform hover:scale-110">
+                            <img src="./images/Rectangle 8 (2).png" alt="Patient"
+                                class="w-full h-full rounded-full object-cover transition-all duration-300">
+                        </div>
+                        <div class="flex-grow transition-all duration-300">
+                            <p class="leading-relaxed text-base transition-all duration-300">"Prescription management is a game-changer! I never
+                                miss a dose, and the automatic refills ensure I always have my medication."</p>
+                            <a class="mt-3 text-blue-500 inline-flex items-center font-bold transition-all duration-300 hover:text-blue-700">
+                                - Robert K.
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2 transition-all duration-300" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masters of Medicine Section -->
+    <section id="doctor" class="py-16 bg-blue-50 transition-all duration-500">
+        <div class="w-full text-center p-10 transition-all duration-500">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2 transition-all duration-500">
+                <span class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">Masters of
+                    Medicine:</span>
+            </h2>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-3 transition-all duration-500">
+                Meet our team of specialists
+            </h3>
+
+            <p class="text-gray-600 mb-10 text-base sm:text-lg max-w-2xl mx-auto transition-all duration-500">
+                Our team of specialists is at the forefront of medical innovation. Each specialist brings expertise and
+                compassionate care.
+            </p>
+
+            <div class="space-y-8 max-w-4xl mx-auto transition-all duration-500">
+                <!-- CARD 1 -->
+                <div
+                    class="flex flex-col md:flex-row bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl items-center shadow-lg pl-0 py-4 space-x-6 doctor-card transition-all duration-500 hover:shadow-xl">
+                    <img src="./images/Doctor-Free-PNG-Image 1.png" class="w-40 h-auto object-contain mb-4 md:mb-0 transition-all duration-500 transform hover:scale-110"
+                        alt="Dr. Sarah Johnson" />
+
+                    <div class="text-left md:ml-6 text-center md:text-left transition-all duration-500">
+                        <h3 class="text-white text-xl font-semibold transition-all duration-300">
+                            Dr. Sarah Johnson (Cardiologist)
+                        </h3>
+
+                        <p class="text-white mt-2 text-sm leading-relaxed max-w-xl transition-all duration-300">
+                            Heart health is Dr. Johnson's passion. She integrates cutting-edge technology with
+                            compassionate care to guide patients toward wellness. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Fuga exercitationem quasi quod quo magni officiis voluptate architecto,
+                            nesciunt quia itaque corrupti, voluptates eos excepturi assumenda! Similique quisquam
+                            facilis voluptatum praesentium?
+                        </p>
+
+                        <button
+                            class="mt-4 bg-white text-sky-700 font-medium px-5 py-2 rounded-lg inline-flex items-center transition-all duration-300 transform hover:scale-105 active:scale-95">
+                            Book appointment
+                            <svg class="w-4 h-4 ml-2 transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="flex flex-col md:flex-row bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl items-center shadow-lg pl-0 py-4 space-x-6 doctor-card transition-all duration-500 hover:shadow-xl">
+                    <img src="./images/Doctor-PNG-Clipart 1.png" class="w-40 h-auto object-contain mb-4 md:mb-0 m-0 transition-all duration-500 transform hover:scale-110"
+                        alt="Dr. Mark Lee" />
+
+                    <div class="text-left md:ml-6 text-center md:text-left transition-all duration-500">
+                        <h3 class="text-white text-xl font-semibold transition-all duration-300">
+                            Dr. Mark Lee (Dermatologist)
+                        </h3>
+
+                        <p class="text-white mt-2 text-sm leading-relaxed max-w-xl transition-all duration-300">
+                            Dr. Lee is a visionary dermatologist, dedicated to precise treatments and patient-centered
+                            care with a gentle holistic approach.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus odio pariatur fugiat
+                            aliquid qui iusto? Distinctio suscipit voluptate, temporibus similique eligendi optio
+                            voluptatibus, debitis aliquid, consequatur soluta facilis sequi explicabo!
+                        </p>
+
+                        <button
+                            class="mt-4 bg-white text-sky-700 font-medium px-5 py-2 rounded-lg inline-flex items-center transition-all duration-300 transform hover:scale-105 active:scale-95">
+                            Book appointment
+                            <svg class="w-4 h-4 ml-2 transition-all duration-300" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="text-gray-600 body-font py-16 bg-white transition-all duration-500">
+        <div class="container px-5 py-24 mx-auto transition-all duration-500">
+            <div class="flex flex-col text-center w-full mb-12 transition-all duration-500">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 transition-all duration-500">Reach our <span
+                        class="text-transparent bg-clip-text bg-gradient-to-l to-sky-300 from-sky-500 transition-all duration-500">Help Desk</span>
+                    for support</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base transition-all duration-500">Questions? Need assistance? Our dedicated support
+                    team is here to help you every step of the way:</p>
+            </div>
+            <div
+                class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end transition-all duration-500">
+                <div class="relative flex-grow w-full transition-all duration-300 transform hover:scale-105">
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter Your First Name"
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-sky-300 focus:border-blue-500 focus:bg-transparent focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-4 leading-8 transition-all duration-300">
+                </div>
+                <div class="relative flex-grow w-full transition-all duration-300 transform hover:scale-105">
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email"
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-sky-300 focus:border-blue-500 focus:bg-transparent focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-4 leading-8 transition-all duration-300">
+                </div>
+                <button
+                    class="text-white bg-sky-500 border-0 py-4 px-8 focus:outline-none hover:bg-sky-600 rounded text-lg transition-all duration-300 transform hover:scale-105 active:scale-95">Contact</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-50 text-blue-500 py-12 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 transition-all duration-500">
+                <div class="transition-all duration-500">
+                    <div class="flex items-center mb-4 transition-all duration-300 transform hover:scale-105">
+                        <img src="./images/Group 23.png" alt="HealNet Logo" class="h-15 transition-all duration-300">
+                    </div>
+                    <p class="text-gray-500 transition-all duration-300">Your trusted partner in digital healthcare.</p>
+                </div>
+                <div class="transition-all duration-500">
+                    <h3 class="text-lg font-semibold mb-4 text-sky-500 transition-all duration-300">Support</h3>
+                    <ul class="space-y-2 transition-all duration-500">
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Getting Started</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">FAQS</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Help Articles</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Report an issue</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Contact Help Desk</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="transition-all duration-500">
+                    <h3 class="text-lg font-semibold mb-4 text-sky-500 transition-all duration-300">Services</h3>
+                    <ul class="space-y-2 transition-all duration-500">
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Booking
+                                appointments</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Online
+                                Consultations</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Medical Notes</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Prescription
+                                Management</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Medicine Refills</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="transition-all duration-500">
+                    <h3 class="text-lg font-semibold mb-4 text-sky-500 transition-all duration-300">Legal</h3>
+                    <ul class="space-y-2 transition-all duration-500">
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Terms &
+                                Conditions</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Cookie Notice</a>
+                        </li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Cookie
+                                Preferences</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-sky-500 transition-all duration-300 transform hover:translate-x-1">Trust Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-sky-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center transition-all duration-500">
+                <div class="flex space-x-4 mb-4 md:mb-0 transition-all duration-500">
+                    <a href="#" class="text-sky-500 hover:text-gray-500 transition-all duration-300 transform hover:scale-125">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5 transition-all duration-300" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-sky-500 hover:text-gray-500 transition-all duration-300 transform hover:scale-125">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5 transition-all duration-300" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-sky-500 hover:text-gray-500 transition-all duration-300 transform hover:scale-125">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5 transition-all duration-300" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-sky-500 hover:text-gray-500 transition-all duration-300 transform hover:scale-125">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5 transition-all duration-300" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="text-gray-500 text-sm text-center md:text-right transition-all duration-300">&copy; 2025 HealNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>
